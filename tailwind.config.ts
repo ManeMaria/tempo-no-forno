@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          100: '#F2E6F7',
+          100: '#fddae3d2',
           200: '#EAACC4',
           300: '#FECBD8',
           400: '#DFC9FA',
@@ -25,14 +25,17 @@ const config: Config = {
           yellow: '#FEDA79',
           green: '#CCE5E5'
         },
-        black: '#000',
+        black: '#2f0b5b',
 
       },
 
       boxShadow: {
-        '3xl': '8px 7px 1px #000',
-      }
+        '3xl': '8px 7px 1px #2f0b5b',
+      },
 
+      textColor: {
+        default: '#2f0b5b',
+      },
 
     },
   },
