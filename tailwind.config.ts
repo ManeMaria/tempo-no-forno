@@ -30,7 +30,7 @@ const config: Config = {
       },
 
       boxShadow: {
-        '3xl': '8px 7px 1px #2f0b5b',
+        '3xl': '5px 5px 1px #2f0b5b',
       },
 
       textColor: {

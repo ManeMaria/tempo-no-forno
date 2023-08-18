@@ -12,11 +12,15 @@ export const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...p
    border-black
    shadow-3xl 
    shadow-black
-   hover:translate-y-1.5
+   transition ease-linear delay-300
+   hover:-translate-y-1.5
+   
    `, props.className)
   return (
     <button  {...props} className={className}>
-      calcular
+      {
+        props.children
+      }
     </button>
   )
 }
