@@ -1,7 +1,7 @@
 "use client"
-import React, { ButtonHTMLAttributes, useReducer } from 'react';
-import { twMerge } from 'tailwind-merge'
+import React, { useReducer } from 'react';
 import { Button } from '../Button';
+import { twMerge } from 'tailwind-merge';
 
 type State = {
   value?: string
@@ -15,29 +15,20 @@ type Option = {
 
 type SelectProps = {
   className?: string
-  onClick?: (value: string) => void
+  onClick?: (value: any) => void
   options: Option[]
 }
 
 
 export const Select: React.FC<SelectProps> = ({ ...props }) => {
   const [reducer, dispatch] = useReducer((state: State, action: State) => ({ ...state, ...action }), {
-    value: props.options?.[0]?.value || '',
+    value: props.options?.[0]?.label || '',
     isOpen: false
-  })
+  });
 
-
-  return (
-    <div className='relative'>
-      <Button className='hover:translate-y-0 px-2 w-14 transition-all ease-in-out' onClick={() => {
-        dispatch({ isOpen: !reducer.isOpen })
-      }} >
-        {reducer.value}
-      </Button>
-
-      <ul data-open={reducer.isOpen} className={`
+  const className = twMerge(`
           h-0 
-          transition-all ease-in-out
+         default-transition
           bg-tertiary-yellow
           opacity-0 
           overflow-hidden
@@ -50,15 +41,28 @@ export const Select: React.FC<SelectProps> = ({ ...props }) => {
           rounded-2xl
           border-black
           shadow-3xl
+          grid 
+          place-items-center
           data-[open="false"]:p-0 data-[open="false"]:opacity-0
-          data-[open="true"]:h-20 opacity-100 p-3.5`}>
+          data-[open="true"]:h-20 opacity-100 p-3.5`, props.className)
+
+
+  return (
+    <div className='relative'>
+      <Button className='px-2 w-14 default-transition grid place-items-center hover:-translate-y-0' onClick={() => {
+        dispatch({ isOpen: !reducer.isOpen })
+      }} >
+        {reducer.value}
+      </Button>
+
+      <ul data-open={reducer.isOpen} className={className}>
         {
           props.options.map((option, index) => {
             return (
-              <li key={index}>
+              <li key={index} data-selected={reducer.value === option.label} className='w-full border-b-2 border-transparent data-[selected=true]:border-b-2 data-[selected=true]:border-black grid items-center'>
                 <button onClick={
                   () => {
-                    dispatch({ value: option.value });
+                    dispatch({ value: option.label, isOpen: false });
                     props?.onClick?.(option.value);
                   }
                 } >

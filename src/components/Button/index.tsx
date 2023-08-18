@@ -12,7 +12,7 @@ export const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...p
    border-black
    shadow-3xl 
    shadow-black
-   transition ease-linear delay-300
+   default-transition
    hover:-translate-y-1.5
    
    `, props.className)
