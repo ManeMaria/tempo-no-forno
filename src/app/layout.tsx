@@ -1,4 +1,5 @@
 import './globals.css'
+
 import { Space_Grotesk } from 'next/font/google';
 
 const space_Grotesk = Space_Grotesk({
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={space_Grotesk.className}>{children}</body>
+
     </html>
   )
 }

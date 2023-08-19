@@ -49,7 +49,7 @@ export const Select: React.FC<SelectProps> = ({ ...props }) => {
 
   return (
     <div className='relative'>
-      <Button className='px-2 w-14 default-transition grid place-items-center hover:-translate-y-0' onClick={() => {
+      <Button type='button' className='px-2 w-14 default-transition grid place-items-center hover:-translate-y-0' onClick={() => {
         dispatch({ isOpen: !reducer.isOpen })
       }} >
         {reducer.value}
@@ -63,6 +63,7 @@ export const Select: React.FC<SelectProps> = ({ ...props }) => {
                 <button onClick={
                   () => {
                     dispatch({ value: option.label, isOpen: false });
+
                     props?.onClick?.(option.value);
                   }
                 } >
