@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 
 
@@ -17,16 +17,16 @@ type AnimatedCharactersProps = {
 
 export const Texts: React.FC<AnimatedCharactersProps> = (props) => {
   // Framer Motion variant object, for controlling animation
-  const item = {
+  const item: Variants = {
     hidden: {
       y: "200%",
       color: "#DFC9FA",
-      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 }
+      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 }
     },
     visible: {
       y: 0,
       color: "#2f0b5b",
-      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.65 }
+      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 }
     }
   };
 

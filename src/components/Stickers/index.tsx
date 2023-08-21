@@ -51,7 +51,7 @@ export const Stickers: React.FC = () => {
           }}
         />
       </motion.div>
-      <motion.div className={`absolute bottom-10 right-[10%] ${defaultStyle}`} ref={image2}>
+      <motion.div className={`absolute bottom-10 right-[0%] ${defaultStyle}`} ref={image2}>
         <NextImage
           imageProps={{
             alt: 'sitker',

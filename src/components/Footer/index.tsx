@@ -2,8 +2,6 @@ import React from 'react';
 import { NextImage } from '..';
 import Link from 'next/link';
 
-
-
 export const Footer = () => {
   return (
     <footer className='bg-primary-400 w-full h-[5rem] bg-primary-100 grid place-items-center text-back py-[1rem]'>

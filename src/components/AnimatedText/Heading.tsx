@@ -16,8 +16,8 @@ export const Heading: React.FC = () => {
 
   const container = {
     visible: {
-      transition: {
 
+      transition: {
         staggerChildren: 0.01
       }
     }

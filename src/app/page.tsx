@@ -4,6 +4,8 @@ import { onlyNumbers } from "@/util/onlyNumbers";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 
+
+
 const MAGNITUDES: Partial<Record<'te' | 'ti', any>> = {
   te: 'Grau(s)',
   ti: {
@@ -13,9 +15,8 @@ const MAGNITUDES: Partial<Record<'te' | 'ti', any>> = {
 }
 
 
-//TODO: resolver animação
-//TODO: setar validadores com zod
-
+//TODO: adicionar favicon
+//TODO: converter essa merda num hook
 export default function Home() {
   const values = useRef<{
     timeValues: 'h' | 'm',
