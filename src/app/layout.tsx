@@ -6,7 +6,6 @@ import Head from 'next/head';
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${process.env.VERCEL_URL}`),
   viewport: {
     width: 'device-width',
     initialScale: 1,
