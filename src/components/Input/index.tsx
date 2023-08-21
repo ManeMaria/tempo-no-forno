@@ -10,7 +10,7 @@ export const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className='grid w-full'>
-      <label className='text-lg font-semibold text-default font-normal'>{label}</label>
+      <label className='text-lg font-normal text-default font-normal'>{label}</label>
       <input className='rounded-2xl h-14 w-full border-black shadow-3xl shadow-black focus:outline-none  focus:border-black border-2 focus:transition-all px-3 text-xl'   {...rest} />
     </div>
   )
